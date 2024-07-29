@@ -1,4 +1,4 @@
-package backend.microservices.testproject.exception.handler;
+package com.backend.test1.exception.handler;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

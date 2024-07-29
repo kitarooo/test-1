@@ -1,23 +1,23 @@
-package backend.microservices.testproject.service.impl;
+package com.backend.test1.service.impl;
 
-import backend.microservices.testproject.dto.request.LoginRequest;
-import backend.microservices.testproject.dto.request.RegistrationRequest;
-import backend.microservices.testproject.dto.response.AuthenticationResponse;
-import backend.microservices.testproject.entity.User;
-import backend.microservices.testproject.entity.enums.Role;
-import backend.microservices.testproject.exception.IncorrectDataException;
-import backend.microservices.testproject.exception.IncorrectPasswordsException;
-import backend.microservices.testproject.exception.NotFoundException;
-import backend.microservices.testproject.exception.UserAlreadyExistException;
-import backend.microservices.testproject.repository.UserRepository;
-import backend.microservices.testproject.security.jwt.JwtService;
-import backend.microservices.testproject.service.UserService;
+
+import com.backend.test1.dto.request.LoginRequest;
+import com.backend.test1.dto.request.RegistrationRequest;
+import com.backend.test1.dto.response.AuthenticationResponse;
+import com.backend.test1.entity.User;
+import com.backend.test1.entity.enums.Role;
+import com.backend.test1.exception.IncorrectDataException;
+import com.backend.test1.exception.IncorrectPasswordsException;
+import com.backend.test1.exception.NotFoundException;
+import com.backend.test1.exception.UserAlreadyExistException;
+import com.backend.test1.repository.UserRepository;
+import com.backend.test1.security.jwt.JwtService;
+import com.backend.test1.service.UserService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 @Service
 @RequiredArgsConstructor
@@ -27,7 +27,6 @@ public class UserServiceImpl implements UserService {
     UserRepository userRepository;
     PasswordEncoder passwordEncoder;
     JwtService jwtService;
-    ImageUploadServiceImpl imageUploadService;
 
     @Override
     public AuthenticationResponse login(LoginRequest request) {
@@ -65,12 +64,5 @@ public class UserServiceImpl implements UserService {
             userRepository.save(user);
             return "Регистрация прошла успешно!";
         }
-    }
-
-    @Override
-    public String updateProfilePhoto(MultipartFile multipartFile, User user) {
-        user.setImageUrl(imageUploadService.saveImage(multipartFile));
-        userRepository.save(user);
-        return "Фото профиля успешно добавлено";
     }
 }

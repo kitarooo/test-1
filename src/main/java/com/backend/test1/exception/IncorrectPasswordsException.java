@@ -1,4 +1,4 @@
-package backend.microservices.testproject.exception;
+package com.backend.test1.exception;
 
 public class IncorrectPasswordsException extends RuntimeException{
     public IncorrectPasswordsException(String message) {

@@ -1,4 +1,4 @@
-package backend.microservices.testproject.dto.response;
+package com.backend.test1.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,4 +1,4 @@
-package backend.microservices.testproject.security.jwt;
+package com.backend.test1.security.jwt;
 
 import io.micrometer.common.lang.NonNull;
 import jakarta.servlet.FilterChain;

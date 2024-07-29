@@ -1,12 +1,8 @@
-package backend.microservices.testproject.entity;
+package com.backend.test1.entity;
 
-import backend.microservices.testproject.entity.base_entity.BaseEntity;
-import backend.microservices.testproject.entity.enums.Role;
+import com.backend.test1.entity.enums.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.security.core.GrantedAuthority;
@@ -24,7 +20,9 @@ import java.util.Collections;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class User extends BaseEntity implements UserDetails {
+public class User implements UserDetails {
+    @Id
+    Long id;
     String username;
     String password;
     String confirmPassword;

@@ -1,6 +1,9 @@
-package backend.microservices.testproject.exception.handler;
+package com.backend.test1.exception.handler;
 
-import backend.microservices.testproject.exception.*;
+import com.backend.test1.exception.IncorrectDataException;
+import com.backend.test1.exception.IncorrectPasswordsException;
+import com.backend.test1.exception.NotFoundException;
+import com.backend.test1.exception.UserAlreadyExistException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -30,12 +33,6 @@ public class ExcHandler {
     @ExceptionHandler(IncorrectPasswordsException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ExceptionResponse incorrectPasswordsException(IncorrectPasswordsException e) {
-        return new ExceptionResponse(HttpStatus.BAD_REQUEST, e.getClass().getName(), e.getMessage());
-    }
-
-    @ExceptionHandler(EmptyFileException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ExceptionResponse emptyFileException(EmptyFileException e) {
         return new ExceptionResponse(HttpStatus.BAD_REQUEST, e.getClass().getName(), e.getMessage());
     }
 }

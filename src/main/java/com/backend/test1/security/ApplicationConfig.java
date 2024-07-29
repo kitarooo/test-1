@@ -1,6 +1,6 @@
-package backend.microservices.testproject.security;
+package com.backend.test1.security;
 
-import backend.microservices.testproject.repository.UserRepository;
+import com.backend.test1.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

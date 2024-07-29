@@ -1,6 +1,6 @@
-package backend.microservices.testproject.repository;
+package com.backend.test1.repository;
 
-import backend.microservices.testproject.entity.User;
+import com.backend.test1.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

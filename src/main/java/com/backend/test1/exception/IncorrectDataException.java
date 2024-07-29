@@ -1,4 +1,4 @@
-package backend.microservices.testproject.exception;
+package com.backend.test1.exception;
 
 public class IncorrectDataException extends RuntimeException{
     public IncorrectDataException(String message) {

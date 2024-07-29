@@ -1,6 +1,6 @@
-package backend.microservices.testproject.security;
+package com.backend.test1.security;
 
-import backend.microservices.testproject.security.jwt.JwtAuthenticationFilter;
+import com.backend.test1.security.jwt.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,10 +30,7 @@ public class SecurityConfig extends WebSecurityConfiguration {
     };
 
     public String[] ADMIN = {
-            "/api/v1/news/createNews",
-            "/api/v1/products/add",
-            "/api/v1/orders/all",
-            "/api/v1/order/{id}"
+            "/api/v1/admin/**"
     };
 
     @Bean
